@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+    #match-img {
+        max-width: 400px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+
+                <h3>
+                    <strong>Who are you?</strong>
+                </h3>
+                <h4>Name</h4>
+                <input type="text" id="name" class="form-control" required>
+
+                <h4>Link to picture</h4>
+                <input type="text" id="pic" class="form-control" required>
+
+
+                <form>
+                    <div class='form-group'>
+                        <label for="videoGames">I love video games!</label>
+                        <select class="form-control" id="q1">
+                            <option>1 (Strongly Disagree)</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                    <div class='form-group'>
+                        <label for="movies">I love movies!</label>
+                        <select class="form-control" id="q2">
+                            <option>1 (Strongly Disagree)</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                    <div class='form-group'>
+                        <label for="reading">I love reading!</label>
+                        <select class="form-control" id="q3">
+                            <option>1 (Strongly Disagree)</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                    <div class='form-group'>
+                        <label for="indoors">I prefer the indoors.</label>
+                        <select class="form-control" id="q4">
+                            <option>1 (Strongly Disagree)</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                    <div class='form-group'>
+                        <label for="music">I listen to obscure music.</label>
+                        <select class="form-control" id="q5">
+                            <option>1 (Strongly Disagree)</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                    <div class='form-group'>
+                        <label for="cooking">I enjoy cooking.</label>
+                        <select class="form-control" id="q6">
+                            <option>1 (Strongly Disagree)</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                    <div class='form-group'>
+                        <label for="boardGames">I love board games!</label>
+                        <select class="form-control" id="q7">
+                            <option>1 (Strongly Disagree)</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                    <div class='form-group'>
+                        <label for="sports">I like to watch sports.</label>
+                        <select class="form-control" id="q8">
+                            <option>1 (Strongly Disagree)</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                    <div class='form-group'>
+                        <label for="museums">I like going to museums.</label>
+                        <select class="form-control" id="q9">
+                            <option>1 (Strongly Disagree)</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                    <div class='form-group'>
+                        <label for="seagal">I like Steven Seagal (Most important question).</label>
+                        <select class="form-control" id="q10">
+                            <option>1 (Strongly Disagree)</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div id="matchModal" class="modal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title">
+                            <strong>You most closely matched with: </strong>
+                        </h2>
+                    </div>
+                    <div class="modal-body">
+                        <h2 id="matchName"></h2>
+                        <img id="match-img" class="img-round" src="" alt="">
+                      
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="window.location.reload()">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $("#submit").on("click", function (event) {
+        event.preventDefault();
+        function checkForm() {
+            var valid = true;
+            $(".form-control").each(function () {
+                if ($(this).val() === "") {
+                    valid = false
+                }
+            });
+            return valid
+        }
+
+        if (checkForm()) {
+            var postData = {
+                name: $("#name").val(),
+                pic: $("#pic").val(),
+                scores: [
+                    $("#q1").val(),
+                    $("#q2").val(),
+                    $("#q3").val(),
+                    $("#q4").val(),
+                    $("#q5").val(),
+                    $("#q6").val(),
+                    $("#q7").val(),
+                    $("#q8").val(),
+                    $("#q9").val(),
+                    $("#q10").val()
+                ]
+            };
+
+            $.post("/api/friends", postData, function (data) {
+                console.log(data);
+                $("#matchName").text(data.name);
+                $("#match-img").attr("src", data.photo);
+                $("#matchModal").modal("toggle");
+            });
+        }
+        else {
+            alert("You need to fill out the form!!")
+        }
+    });
+
+</script>
+
+</html>
